@@ -1,0 +1,53 @@
+.artistas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.artistas-table {
+    width: 60%;
+    border-collapse: collapse;
+    color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.artistas-table th, .artistas-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.artistas-table th {
+    background-color: #2F250C;
+    color: #DDAE39;
+}
+
+.artistas-table tr:nth-child(even) {
+    background-color: #A3812A;
+}
+
+.artistas-table tr:nth-child(odd) {
+    background-color: #C09832;
+}
+
+.artistas-table tr:hover {
+    background-color: #856723;
+    transition: background-color 0.5s ease;
+}
+
+.link {
+    color: #2E240C;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}

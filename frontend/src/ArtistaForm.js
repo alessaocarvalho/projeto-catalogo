@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import "./css/ArtistaForm.css"
 
 // Estado inicial:
 
@@ -42,9 +43,9 @@ const ArtistaForm = () => {
 // Renderização do formulário:
 
     return (
-        <div>
-            <h1>Novo Artista</h1>
-            <form onSubmit={handleSubmit}>
+        <div className="form-container">
+            <h1 className="title">Novo Artista</h1>
+            <form className="form" onSubmit={handleSubmit}>
                 <div>
                     <label>Nome:</label>
                     <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} required />
@@ -71,7 +72,7 @@ const ArtistaForm = () => {
                         <option value="RG">RG</option>
                     </select>
                 </div>
-                <button type="submit">Adicionar Artista</button>
+                <button className="button" type="submit">Adicionar Artista</button>
             </form>
         </div>
     );

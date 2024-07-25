@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import "./css/ArtistaForm.css";
 
 // Estado inicial:
 
@@ -15,7 +16,7 @@ const ArtistaDetalhes = () => {
         tipo_documento: "CPF"
     });
 
-// Busca de dados do artista na API:
+    // Busca de dados do artista na API:
 
     useEffect(() => {
         const fetchArtista = async () => {
@@ -31,7 +32,7 @@ const ArtistaDetalhes = () => {
         fetchArtista();
     }, [id]);
 
-// Manipulação de mudanças no formulário:
+    // Manipulação de mudanças no formulário:
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -41,7 +42,7 @@ const ArtistaDetalhes = () => {
         });
     };
 
-// Envio do formulário:
+    // Envio do formulário:
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -54,9 +55,10 @@ const ArtistaDetalhes = () => {
         }
     };
 
-// Exclusão de artista:
+    // Exclusão de artista:
 
-    const handleDelete = async () => {
+    const handleDelete = async (e) => {
+        e.preventDefault();
         try {
             await axios.delete(`http://127.0.0.1:8000/api/artistas/${id}/`, artista);
             alert("Artista deletado com sucesso!");
@@ -67,12 +69,12 @@ const ArtistaDetalhes = () => {
         }
     };
 
-// Renderização do formulário de detalhes/edição:
+    // Renderização do formulário de detalhes/edição:
 
     return (
-        <div>
-            <h1>Detalhes do Artista</h1>
-            <form onSubmit={handleSubmit}>
+        <div className="form-container">
+            <h1 className="title">Detalhes do Artista</h1>
+            <form className="form" onSubmit={handleSubmit}>
                 <div>
                     <label>Nome:</label>
                     <input
@@ -125,9 +127,11 @@ const ArtistaDetalhes = () => {
                         <option value="RG">RG</option>
                     </select>
                 </div>
-                <button type="submit">Atualizar Artista</button>
+                <div className="button-container">
+                    <button className="button" type="submit">Atualizar Artista</button>
+                    <button className="red-button" onClick={handleDelete}>Deletar Artista</button>
+                </div>
             </form>
-            <button onClick={handleDelete}>Deletar Artista</button>
         </div>
     );
 };
