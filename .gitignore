@@ -11,6 +11,3 @@ __pycache__/
 
 # Ignore environment variable files
 .env
-
-# Ignore Django migrations
-*/migrations/
