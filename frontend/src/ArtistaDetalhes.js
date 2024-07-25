@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import InputMask from "react-input-mask";
 import "./css/ArtistaForm.css";
 
 // Estado inicial:
@@ -109,13 +110,14 @@ const ArtistaDetalhes = () => {
                 </div>
                 <div>
                     <label>Documento:</label>
-                    <input
-                        type="text"
-                        name="documento"
+                    <InputMask
+                        mask={artista.tipo_documento === "CPF" ? "999.999.999-99" : "99.999.999-9"}
                         value={artista.documento}
                         onChange={handleChange}
                         required
-                    />
+                    >
+                        {(inputProps) => <input type="text" {...inputProps} />}
+                    </InputMask>
                 </div>
                 <div>
                     <label>Tipo de Documento:</label>
