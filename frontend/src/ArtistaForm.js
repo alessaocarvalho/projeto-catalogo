@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./css/ArtistaForm.css"
 
 // Estado inicial:
@@ -10,6 +11,7 @@ const ArtistaForm = () => {
     const [email, setEmail] = useState("");
     const [documento, setDocumento] = useState("");
     const [tipoDocumento, setTipoDocumento] = useState("CPF");
+    const navigate = useNavigate();
 
     // Manipulação do envio:
 
@@ -26,18 +28,15 @@ const ArtistaForm = () => {
         try {
             await axios.post("http://127.0.0.1:8000/api/artistas/", novoArtista);
             alert("Artista criado com sucesso!");
-
-            // Limpa o formulário após envio bem sucedido:
-
-            setNome("");
-            setTipo("Solo");
-            setEmail("");
-            setDocumento("");
-            setTipoDocumento("CPF");
+            navigate("/artistas")
         } catch (error) {
             console.error("Erro ao criar arista: ", error);
             alert("Erro ao criar artista.");
         }
+    };
+
+    const handleBack = () => {
+        navigate('/artistas');
     };
 
 // Renderização do formulário:
@@ -72,7 +71,10 @@ const ArtistaForm = () => {
                         <option value="RG">RG</option>
                     </select>
                 </div>
+                <div className="button-container">
                 <button className="button" type="submit">Adicionar Artista</button>
+                <button className="button" type="button" onClick={handleBack}>Voltar</button>
+                </div>
             </form>
         </div>
     );

@@ -21,6 +21,7 @@ const ArtistasLista = () => {
         <div className="artistas-container">
             <h1 className="title">Catálogo de Artistas</h1>
             <h2>Este é o catálogo de artistas. Clique sobre o nome de um artista para atualizar informações ou excluir.</h2>
+            <h2><Link to={"/novo-artista"}>Clique aqui para adicionar um novo artista.</Link></h2>
             <table className="artistas-table">
                 <thead>
                     <tr>

@@ -49,6 +49,7 @@ const ArtistaDetalhes = () => {
         try {
             await axios.put(`http://127.0.0.1:8000/api/artistas/${id}/`, artista);
             alert("Artista atualizado com sucesso!");
+            navigate("/artistas")
         } catch (error) {
             console.error("Erro ao atualizar artista: ", error);
             alert("Erro ao atualizar artista.");
