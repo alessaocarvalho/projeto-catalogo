@@ -2,16 +2,6 @@
 
 Este projeto busca viabilizar de forma eficaz a gestão de um catálogo musical. O objetivo é que com esta aplicação seja possível listar, adicionar, editar e deletar artistas em uma interface intuitiva.
 
-# Índice
-
-1. [Tecnologias Utilizadas](#tecnologias-utilizadas)
-2. [Requisitos](#requisitos)
-3. [Instalação](#instalação)
-4. [Uso](#uso)
-5. [Endpoints da API](#endpoints-da-api)
-6. [Componentes do Frontend](#componentes-do-frontend)
-
-
 # Tecnologias Utilizadas
 
 Durante o desenvolvimento desta aplicação, foram utilizadas as seguintes tecnologias:
@@ -91,9 +81,9 @@ Estes são os componentes criados de acordo com os requisitos da aplicação
 `frontend\src\ArtistasLista.js`  
 Componente responsável por listar todos os artistas
 ### ArtistaDetalhes.js
-`frontend\src\ArtistasLista.js`  
+`frontend\src\ArtistaDetalhes.js`  
 Componente responsável por exibir os detalhes de um artista específico, além de permitir a edição e a exclusão
-### ArtistasForm.js
+### ArtistaForm.js
 `frontend\src\ArtistaForm.js`  
 Componente responsável por criar um novo artista
 
@@ -101,6 +91,9 @@ Componente responsável por criar um novo artista
 
 Testes realizados na API utilizando o Postman
 
-### Teste método GET
-
-<img src="/testes-api/metodo-get.png" alt="Método Get" width="300" height="200">
+| Método     | Imagem                            |
+|------------|-----------------------------------|
+| **GET**    | <img src="/testes-api/metodo-get.png" alt="Método GET" width="300" height="200"> |
+| **POST**   | <img src="/testes-api/metodo-post.png" alt="Método POST" width="300" height="200"> |
+| **PUT**    | <img src="/testes-api/metodo-put.png" alt="Método PUT" width="300" height="200"> |
+| **DELETE** | <img src="/testes-api/metodo-delete.png" alt="Método DELETE" width="300" height="200"> |
