@@ -28,40 +28,42 @@ Abaixo está a estrutura de pastas do projeto:
 ````plaintext
 projeto-catalogo/
 ├── backend/
-│ ├── backend/
-│ │ ├── init.py
-│ │ ├── asgi.py
-│ │ ├── settings.py
-│ │ ├── urls.py
-│ │ ├── wsgi.py
-│ ├── catalog/
-│ │ ├── migrations/
-│ │ ├── init.py
-│ │ ├── admin.py
-│ │ ├── apps.py
-│ │ ├── models.py
-│ │ ├── serializers.py
-│ │ ├── tests.py
-│ │ ├── views.py
-│ ├── db.sqlite3
-│ ├── manage.py
-│ ├── requirements.txt
+│   ├── backend/
+│   │   ├── __init__.py
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   ├── wsgi.py
+│   ├── catalog/
+│   │   ├── migrations/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── tests.py
+│   │   ├── views.py
+│   ├── manage.py
+│   ├── requirements.txt
 ├── frontend/
-│ ├── public/
-│ ├── src/
-│ │ ├── css/
-│ │ ├── App.css
-│ │ ├── App.js
-│ │ ├── App.test.js
-│ │ ├── ArtistaDetalhes.js
-│ │ ├── ArtistaForm.js
-│ │ ├── ArtistasLista.js
-│ │ ├── index.css
-│ │ ├── index.js
-│ │ ├── logo.svg
-│ │ ├── reportWebVitals.js
-│ │ ├── setupTests.js
+│   ├── public/
+│   ├── src/
+│   │   ├── css/
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── App.test.js
+│   │   ├── ArtistaDetalhes.js
+│   │   ├── ArtistaForm.js
+│   │   ├── ArtistasLista.js
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   ├── logo.svg
+│   │   ├── reportWebVitals.js
+│   │   ├── setupTests.js
 ├── testes-api/
+├── .gitignore
+├── package-lock.json
+├── package.json
 ├── README.md
 ````
 
