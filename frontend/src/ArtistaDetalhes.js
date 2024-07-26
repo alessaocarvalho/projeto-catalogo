@@ -61,13 +61,16 @@ const ArtistaDetalhes = () => {
 
     const handleDelete = async (e) => {
         e.preventDefault();
-        try {
-            await axios.delete(`http://127.0.0.1:8000/api/artistas/${id}/`, artista);
-            alert("Artista deletado com sucesso!");
-            navigate("/artistas");
-        } catch (error) {
-            console.error("Erro ao deletar artista: ", error);
-            alert("Erro ao deletar artista.");
+        const confirmDelete = window.confirm("Tem certeza de que deseja deletar este artista?")
+        if (confirmDelete) {
+            try {
+                await axios.delete(`http://127.0.0.1:8000/api/artistas/${id}/`, artista);
+                alert("Artista deletado com sucesso!");
+                navigate("/artistas");
+            } catch (error) {
+                console.error("Erro ao deletar artista: ", error);
+                alert("Erro ao deletar artista.");
+            }
         }
     };
 
