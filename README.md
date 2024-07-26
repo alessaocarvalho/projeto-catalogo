@@ -2,98 +2,168 @@
 
 Este projeto busca viabilizar de forma eficaz a gestão de um catálogo musical. O objetivo é que com esta aplicação seja possível listar, adicionar, editar e deletar artistas em uma interface intuitiva.
 
-# Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 Durante o desenvolvimento desta aplicação, foram utilizadas as seguintes tecnologias:
 
-| Tecnologia | Uso |
-|----------|-----------------|
-| Django | Framework backend |
-| Django Rest Framework | Construção da API |
-| React JS | Framework frontend |
-| Postman | Testes de API |
-| VS Code | Ambiente de desenvolvimento |
+| Tecnologia             | Uso                    |
+|------------------------|------------------------|
+| Django                 | Framework backend      |
+| Django Rest Framework  | Construção da API      |
+| React JS               | Framework frontend     |
+| Postman                | Testes de API          |
+| VS Code                | Ambiente de desenvolvimento |
 
-# Requisitos
+## Requisitos
 
 * CRUD para artistas
 * Tela para listar artistas
 * Tela de detalhes/edição/remoção de artistas
 * Tela para criação de artistas
 
-# Instalação
+## Estrutura de Pastas
 
-A aplicação deve ser instalada seguindo os passos indicados
+Abaixo está a estrutura de pastas do projeto:
 
-## Backend
+````plaintext
+projeto-catalogo/
+├── backend/
+│ ├── backend/
+│ │ ├── init.py
+│ │ ├── asgi.py
+│ │ ├── settings.py
+│ │ ├── urls.py
+│ │ ├── wsgi.py
+│ ├── catalog/
+│ │ ├── migrations/
+│ │ ├── init.py
+│ │ ├── admin.py
+│ │ ├── apps.py
+│ │ ├── models.py
+│ │ ├── serializers.py
+│ │ ├── tests.py
+│ │ ├── views.py
+│ ├── db.sqlite3
+│ ├── manage.py
+│ ├── requirements.txt
+├── frontend/
+│ ├── public/
+│ ├── src/
+│ │ ├── css/
+│ │ ├── App.css
+│ │ ├── App.js
+│ │ ├── App.test.js
+│ │ ├── ArtistaDetalhes.js
+│ │ ├── ArtistaForm.js
+│ │ ├── ArtistasLista.js
+│ │ ├── index.css
+│ │ ├── index.js
+│ │ ├── logo.svg
+│ │ ├── reportWebVitals.js
+│ │ ├── setupTests.js
+├── testes-api/
+├── README.md
+````
+
+## Instalação
+
+### Backend
 
 Utilize um terminal para executar os passos abaixo:
 
-### 1. Clonagem do repositório
-`git clone https://github.com/alessaocarvalho/projeto-catalogo/`
-### 2. Configuração do ambiente virtual
-`python -m venv venv`  
-`venv\Scripts\activate`
-### 3. Instalação das depedências
-`cd backend`  
-`pip install -r requirements.txt`
-### 4. Configuração do banco de dados
-`python manage.py makemigrations`  
-`python manage.py migrate`
-### 5. Execução do servidor
-`python manage.py runserver`
+1. **Clonagem do repositório**
+    ```sh
+    git clone https://github.com/alessaocarvalho/projeto-catalogo/
+    ```
 
-## Frontend
+2. **Configuração do ambiente virtual**
+    ```sh
+    python -m venv venv
+    venv\Scripts\activate
+    ```
+
+3. **Instalação das dependências**
+    ```sh
+    cd backend
+    pip install -r requirements.txt
+    ```
+
+4. **Configuração do banco de dados**
+    ```sh
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+
+5. **Execução do servidor**
+    ```sh
+    python manage.py runserver
+    ```
+
+### Frontend
 
 Utilize um terminal para executar os passos abaixo:
 
-### 1. Navegação ao diretório frontend
-`cd frontend`
-### 2. Instalação das dependências
-`npm install`
-### 3. Execução do servidor
-`npm start`
+1. **Navegação ao diretório frontend**
+    ```sh
+    cd frontend
+    ```
 
-# Uso
+2. **Instalação das dependências**
+    ```sh
+    npm install
+    ```
 
-### Aplicação React
-`http://localhost:3000`
-### API do backend
-`http://localhost:8000/api/`
+3. **Execução do servidor**
+    ```sh
+    npm start
+    ```
 
-# Endpoints da API
+## Uso
 
-Endpoints da API e suas funcionalidades
+* **Aplicação React**: `http://localhost:3000`
+* **API do backend**: `http://localhost:8000/api/`
 
-| Endpoint | Uso |
-|----------|-----|
-| `GET /api/artistas/` | Obter uma lista de todos os artistas |
-| `POST /api/artistas/` | Criar um novo artista |
+## Endpoints da API
+
+Endpoints da API e suas funcionalidades:
+
+| Endpoint              | Uso                                   |
+|-----------------------|---------------------------------------|
+| `GET /api/artistas/`  | Obter uma lista de todos os artistas  |
+| `POST /api/artistas/` | Criar um novo artista                 |
 | `GET /api/artistas/{id}/` | Obter detalhes de um artista específico |
-| `PUT /api/artistas/{id}/` | Atualizar um artista |
-| `DELETE /api/artistas/{id}/` | Deletar um artista |
+| `PUT /api/artistas/{id}/` | Atualizar um artista               |
+| `DELETE /api/artistas/{id}/` | Deletar um artista             |
 
-# Componentes do Frontend
+## Componentes do Frontend
 
-Estes são os componentes criados de acordo com os requisitos da aplicação
+Estes são os componentes criados de acordo com os requisitos da aplicação:
 
 ### ArtistasLista.js
-`frontend\src\ArtistasLista.js`  
-Componente responsável por listar todos os artistas
+
+| Caminho                       | Descrição                                      |
+|-------------------------------|------------------------------------------------|
+| `frontend\src\ArtistasLista.js` | Componente responsável por listar todos os artistas |
+
 ### ArtistaDetalhes.js
-`frontend\src\ArtistaDetalhes.js`  
-Componente responsável por exibir os detalhes de um artista específico, além de permitir a edição e a exclusão
+
+| Caminho                           | Descrição                                             |
+|-----------------------------------|-------------------------------------------------------|
+| `frontend\src\ArtistaDetalhes.js` | Componente responsável por exibir os detalhes de um artista específico, além de permitir a edição e a exclusão |
+
 ### ArtistaForm.js
-`frontend\src\ArtistaForm.js`  
-Componente responsável por criar um novo artista
 
-# Testes de API
+| Caminho                      | Descrição                                   |
+|------------------------------|---------------------------------------------|
+| `frontend\src\ArtistaForm.js` | Componente responsável por criar um novo artista |
 
-Testes realizados na API utilizando o Postman
+## Testes de API
 
-| Método     | Imagem                            |
-|------------|-----------------------------------|
-| **GET**    | <img src="/testes-api/metodo-get.png" alt="Método GET" width="300" height="200"> |
-| **POST**   | <img src="/testes-api/metodo-post.png" alt="Método POST" width="300" height="200"> |
-| **PUT**    | <img src="/testes-api/metodo-put.png" alt="Método PUT" width="300" height="200"> |
-| **DELETE** | <img src="/testes-api/metodo-delete.png" alt="Método DELETE" width="300" height="200"> |
+Testes realizados na API utilizando o Postman:
+
+| Método     | Evidência de Teste |
+|------------|--------------------|
+| **GET**    | ![Método GET](/testes-api/metodo-get.png) |
+| **POST**   | ![Método POST](/testes-api/metodo-post.png) |
+| **PUT**    | ![Método PUT](/testes-api/metodo-put.png) |
+| **DELETE** | ![Método DELETE](/testes-api/metodo-delete.png) |
